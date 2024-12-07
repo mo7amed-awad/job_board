@@ -23,5 +23,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls',namespace='accounts')),
     path('admin/', admin.site.urls),
-    path('jobs/', include(('job.urls', 'jobs'), namespace='jobs')),  # Correct use of namespace
+    path('jobs/', include(('job.urls', 'jobs'), namespace='jobs')), 
+    path('contact-us/', include(('contact.urls', 'contact'), namespace='contact')), 
 ]

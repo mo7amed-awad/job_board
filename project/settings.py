@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     #Apps
     'job',
+    'contact',
     'bootstrap4',
     
 ]

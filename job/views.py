@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from .models import Job
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 from .form import ApplyForm,JobForm
 # Create your views here.
 
@@ -34,7 +35,7 @@ def job_detail(request,slug):
     return render(request,'job/job_detail.html',{'job':job_detail,'form':form})
 
 
-
+@login_required
 def add_job(request):
 
     if request.method=='POST':

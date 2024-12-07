@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from .forms import SignupForm,UserForm,ProfileForm
 from django.contrib.auth import authenticate,login
+from django.contrib.auth.decorators import login_required
 from .models import Profile
 from django.urls import reverse
 
@@ -23,12 +24,12 @@ def signup(request):
     return render(request,'registration/signup.html',{'form':form})
     
 
-
+@login_required
 def profile(request):
     profile = Profile.objects.get(user=request.user)
     return render(request,'accounts/profile.html',{'profile':profile})
 
-
+@login_required
 def profile_edit(request):
     profile = Profile.objects.get(user=request.user)
 
