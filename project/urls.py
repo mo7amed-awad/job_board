@@ -25,4 +25,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('jobs/', include(('job.urls', 'jobs'), namespace='jobs')), 
     path('contact-us/', include(('contact.urls', 'contact'), namespace='contact')), 
+    path('api-auth/',include('rest_framework.urls')),
 ]
